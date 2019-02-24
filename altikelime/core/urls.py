@@ -11,5 +11,4 @@ urlpatterns = [
 
     # /my-post
     re_path(r'^my-post/$', UserPostListView.as_view(), name='post-user'),
-
 ]

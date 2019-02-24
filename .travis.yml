@@ -2,5 +2,5 @@ language: python
 python:
   - "3.6"
 install:
-  - pip install -r requirements.txt
-script: python manage.py test
+  - pip install -r altikelime/requirements.txt
+script: python altikelime/manage.py test

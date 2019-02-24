@@ -33,8 +33,21 @@ class PostTestCase(APITestCase):
     def test_get_user_posts(self):
         client = APIClient()
         token = Token.objects.get(user=self.user)
+        Post.objects.create(user=self.user, content="1 2 3 4 5 6", category=self.category)
+        print(Post.objects.all())
         client.credentials(HTTP_AUTHORIZATION='Token ' + token.key)
         url = reverse_lazy('core:post-user')
         serializer = PostListSerializer(Post.objects.filter(user=self.user), many=True)
         response = client.get(url)
         self.assertEquals(serializer.data, response.data)
+
+    def test_get_post_detaill(self):
+        client = APIClient()
+        post = Post.objects.create(user=self.user, content="1 2 3 4 5 6", category=self.category)
+        print(Post.objects.all())
+        url = reverse_lazy('core:post-detail', kwargs={'slug': post.slug})
+        response = client.get(url)
+        serializer = PostListSerializer(post, many=False)
+        print(response.data)
+        print(serializer.data)
+        self.assertEquals(response.data, serializer.data)

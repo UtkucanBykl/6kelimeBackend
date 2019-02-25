@@ -7,6 +7,9 @@ from ..models import Category, Post
 from ..serializers import PostListSerializer
 
 
+__all__ = ['PostTestCase']
+
+
 class PostTestCase(APITestCase):
 
     def setUp(self):

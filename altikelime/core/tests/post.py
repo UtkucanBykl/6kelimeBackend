@@ -34,7 +34,6 @@ class PostTestCase(APITestCase):
         client = APIClient()
         token = Token.objects.get(user=self.user)
         Post.objects.create(user=self.user, content="1 2 3 4 5 6", category=self.category)
-        print(Post.objects.all())
         client.credentials(HTTP_AUTHORIZATION='Token ' + token.key)
         url = reverse_lazy('core:post-user')
         serializer = PostListSerializer(Post.objects.filter(user=self.user), many=True)
@@ -44,10 +43,18 @@ class PostTestCase(APITestCase):
     def test_get_post_detaill(self):
         client = APIClient()
         post = Post.objects.create(user=self.user, content="1 2 3 4 5 6", category=self.category)
-        print(Post.objects.all())
         url = reverse_lazy('core:post-detail', kwargs={'slug': post.slug})
         response = client.get(url)
         serializer = PostListSerializer(post, many=False)
+        self.assertEquals(response.data, serializer.data)
+
+    def test_get_category_posts(self):
+        client = APIClient()
+        Post.objects.create(user=self.user, content="1 2 3 4 5 6", category=self.category)
+        Post.objects.create(user=self.user, content="1 2 3 4 5 6", category=self.category)
+        url = reverse_lazy('core:post-category', kwargs={'cat_name': self.category.name})
+        response = client.get(url)
+        serializer = PostListSerializer(Post.objects.filter(category=self.category), many=True)
         print(response.data)
         print(serializer.data)
         self.assertEquals(response.data, serializer.data)

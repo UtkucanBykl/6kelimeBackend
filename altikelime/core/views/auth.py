@@ -18,7 +18,7 @@ class LoginView(APIView):
 
         return Response(
             UserDetailSerializer(user).data,
-            status=status.HTTP_201_CREATED
+            status=status.HTTP_200_OK
         )
 
 

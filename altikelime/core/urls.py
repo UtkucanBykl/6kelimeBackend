@@ -1,6 +1,6 @@
 from django.urls import re_path
 
-from .views import PostCreateApiView, UserPostListView, PostDetailApiView
+from .views import PostCreateApiView, UserPostListView, PostDetailApiView, LoginView
 
 app_name = 'core'
 
@@ -14,5 +14,8 @@ urlpatterns = [
 
     # /detail/{slug}/
     re_path(r'^post/(?P<slug>[\w-]+)/$',  PostDetailApiView.as_view(), name='post-detail'),
+
+    # /login
+    re_path(r'^login/', LoginView.as_view(), name='login'),
 
 ]

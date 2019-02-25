@@ -13,10 +13,9 @@ class AuthTestCase(APITestCase):
 
     def setUp(self):
 
-        self.user = User.objects.create_user(username="hikmet", email="a@a.com")
+        self.user = User.objects.create(username="hikmet", email="a@a.com")
         self.user.set_password('123456')
         self.user.save()
-        Token.objects.create(user=self.user)
 
     def test_login(self):
 

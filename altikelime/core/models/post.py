@@ -1,5 +1,7 @@
-from django.db import models
+import random
 
+from django.db import models
+from django.utils.text import slugify
 
 from ..models import BaseModel
 
@@ -12,6 +14,7 @@ class Post(BaseModel):
     content = models.CharField('İçerik', max_length=140)
     publish = models.BooleanField('Görünür mü?', default=True)
     category = models.ForeignKey(verbose_name='Kategori', to='Category', related_name='posts', on_delete=models.CASCADE)
+    slug = models.SlugField(editable=False, unique=True)
 
     class Meta:
         verbose_name = 'Gönderi'
@@ -19,6 +22,10 @@ class Post(BaseModel):
 
     def __str__(self):
         return self.content
+
+    def save(self, **kwargs):
+        self.slug = slugify(f'{self.content}-{random.randint(0, 1000)}')
+        return super(Post, self).save(**kwargs)
 
 
 class Like(BaseModel):

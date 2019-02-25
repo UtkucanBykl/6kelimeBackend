@@ -3,5 +3,5 @@ python:
   - "3.6"
 install:
   - pip install -r altikelime/requirements.txt
-script: python altikelime/manage.py test core.tests.post
+script: python altikelime/manage.py test core.tests
 

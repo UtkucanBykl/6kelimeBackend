@@ -1,8 +1,13 @@
+import json
+
 from rest_framework.test import APITestCase, APIClient
 from django.contrib.auth.models import User
 from rest_framework.authtoken.models import Token
 from django.urls import reverse_lazy
-import json
+
+
+__all__ = ['AuthTestCase']
+
 
 class AuthTestCase(APITestCase):
 
@@ -17,7 +22,6 @@ class AuthTestCase(APITestCase):
 
         token = Token.objects.get(user__username='hikmet')
         client = APIClient()
-        client.credentials(HTTP_AUTHORIZATION='Token ' + token.key)
         url = reverse_lazy("core:login")
         data = {'username': 'hikmet', 'password': '123456'}
         response = client.post(url, data, format='json')

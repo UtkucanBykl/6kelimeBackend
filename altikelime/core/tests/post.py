@@ -16,7 +16,6 @@ class PostTestCase(APITestCase):
         self.user = User.objects.create(username='utkucan', email='1234@dd.com')
         self.user.set_password('123456')
         self.user.save()
-        Token.objects.create(user=self.user)
         self.category = Category.objects.create(name='Cat1')
 
     def test_create_post_with_correct_data(self):

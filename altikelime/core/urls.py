@@ -1,5 +1,5 @@
 from django.urls import re_path
-from .views import PostCreateApiView, UserPostListView, PostDetailApiView, CategoryPostsListView, LoginView
+from .views import PostCreateApiView, UserPostListView, PostDetailApiView, CategoryPostsListView, LoginView, RegisterView
 
 app_name = 'core'
 
@@ -20,4 +20,6 @@ urlpatterns = [
     # /posts/category/{cat_name}
     re_path(r'^post/category/(?P<cat_name>[\w-]+)/$', CategoryPostsListView.as_view(), name='post-category'),
 
+    # /register
+    re_path(r'^register/', RegisterView.as_view(), name='register'),
 ]

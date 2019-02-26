@@ -14,7 +14,7 @@ class LoginSerializer(serializers.Serializer):
         username = data.get('username', '')
         password = data.get('password', '')
 
-        if username and password :
+        if username and password:
             user = authenticate(request=data, username=username, password=password)
 
             if not user:

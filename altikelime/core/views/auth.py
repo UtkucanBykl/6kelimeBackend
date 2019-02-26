@@ -1,11 +1,13 @@
 from rest_framework import status
 from rest_framework.authtoken.views import APIView
+from rest_framework.generics import CreateAPIView
 from rest_framework.response import Response
 from django.contrib.auth import login as django_login, logout as django_logout
+from django.contrib.auth.models import User
 from rest_framework.authentication import TokenAuthentication
-from ..serializers import LoginSerializer, UserDetailSerializer
+from ..serializers import LoginSerializer, UserDetailSerializer, RegisterSerializer
 
-__all__ = ['LoginView', 'LogoutView']
+__all__ = ['LoginView', 'RegisterView', 'LogoutView']
 
 
 class LoginView(APIView):
@@ -19,6 +21,21 @@ class LoginView(APIView):
         return Response(
             UserDetailSerializer(user).data,
             status=status.HTTP_200_OK
+        )
+
+
+class RegisterView(CreateAPIView):
+
+    serializer_class = RegisterSerializer
+
+    def perform_create(self, serializer):
+        serializer.save()
+
+    def create(self, request, *args, **kwargs):
+        super(RegisterView, self).create(request, *args, **kwargs)
+        return Response(
+            {'status': 'success'},
+            status=status.HTTP_201_CREATED,
         )
 
 

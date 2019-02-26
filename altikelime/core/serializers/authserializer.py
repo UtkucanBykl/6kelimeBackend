@@ -1,7 +1,8 @@
 from rest_framework import serializers
 from django.contrib.auth import authenticate
+from django.contrib.auth.models import User
 
-__all__ = ['LoginSerializer']
+__all__ = ['LoginSerializer', 'RegisterSerializer']
 
 
 class LoginSerializer(serializers.Serializer):
@@ -14,7 +15,7 @@ class LoginSerializer(serializers.Serializer):
         username = data.get('username', '')
         password = data.get('password', '')
 
-        if username and password :
+        if username and password:
             user = authenticate(request=data, username=username, password=password)
 
             if not user:
@@ -28,5 +29,13 @@ class LoginSerializer(serializers.Serializer):
             raise serializers.ValidationError(msg, code='authorization')
 
         return data
+
+
+class RegisterSerializer(serializers.ModelSerializer):
+
+    class Meta:
+
+        model = User
+        fields = ('username', 'first_name', 'last_name', 'email')
 
 

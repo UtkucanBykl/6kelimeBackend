@@ -3,7 +3,6 @@ from rest_framework.authtoken.views import APIView
 from rest_framework.generics import CreateAPIView
 from rest_framework.response import Response
 from django.contrib.auth import login as django_login, logout as django_logout
-from django.contrib.auth.models import User
 from rest_framework.authentication import TokenAuthentication
 from ..serializers import LoginSerializer, UserDetailSerializer, RegisterSerializer
 
@@ -29,19 +28,20 @@ class RegisterView(CreateAPIView):
     serializer_class = RegisterSerializer
 
     def perform_create(self, serializer):
-        serializer.save()
+        self.user = serializer.save()
 
     def create(self, request, *args, **kwargs):
         super(RegisterView, self).create(request, *args, **kwargs)
+        serializer = UserDetailSerializer(self.user)
         return Response(
-            {'status': 'success'},
+            serializer.data,
             status=status.HTTP_201_CREATED,
         )
 
 
 class LogoutView(APIView):
     
-    authentication_classes = (TokenAuthentication,)
+    authentication_classes = (TokenAuthentication, )
 
     def post(self, request):
         django_logout(request)

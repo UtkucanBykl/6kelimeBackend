@@ -41,4 +41,5 @@ class AuthTestCase(APITestCase):
             'password': '123456',
         }
         response = client.post(url, data, format='json')
+        self.assertEquals(User.objects.filter(username='hikmos').count(), 1)
         self.assertEqual(status.HTTP_201_CREATED, response.status_code)

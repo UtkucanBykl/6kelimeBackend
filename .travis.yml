@@ -5,4 +5,4 @@ install:
   - pip install -r altikelime/requirements.txt
 script: python altikelime/manage.py test core.tests
 after_failure: chmod +x telegram_message.sh && export STATU='Fail' && .telegram_message.sh
-after_success: chmod +x telegram_message.sh && export STATU='Success' && ./telegram_message.sh && curl -s https://codecov.io/bash
+after_success: chmod +x telegram_message.sh && export STATU='Success' && ./telegram_message.sh && codecov

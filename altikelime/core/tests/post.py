@@ -70,3 +70,5 @@ class PostTestCase(APITestCase):
         response = client.post(url)
         self.assertEquals(Post.objects.get(id=post.id).like_count, 1)
         self.assertEquals(response.status_code, 201)
+        client.post(url)
+        self.assertEquals(Post.objects.get(id=post.id).like_count, 0)

@@ -12,6 +12,8 @@ local_settings.py
 .Python
 build/
 develop-eggs/
+.coverage
+coverage.xml
 dist/
 downloads/
 eggs/

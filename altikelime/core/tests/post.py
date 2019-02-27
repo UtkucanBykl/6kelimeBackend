@@ -60,3 +60,13 @@ class PostTestCase(APITestCase):
         print(response.data)
         print(serializer.data)
         self.assertEquals(response.data, serializer.data)
+
+    def test_create_like(self):
+        client = APIClient()
+        token = Token.objects.get(user=self.user)
+        post = Post.objects.create(user=self.user, content="1 2 3 4 5 6", category=self.category)
+        client.credentials(HTTP_AUTHORIZATION='Token ' + token.key)
+        url = reverse_lazy('core:like-create', kwargs={'slug': post.slug})
+        response = client.post(url)
+        self.assertEquals(Post.objects.get(id=post.id).like_count, 1)
+        self.assertEquals(response.status_code, 201)

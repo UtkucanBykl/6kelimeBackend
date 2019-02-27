@@ -1,5 +1,15 @@
 from django.urls import re_path
-from .views import PostCreateApiView, UserPostListView, PostDetailApiView, CategoryPostsListView, LoginView, RegisterView
+
+from .views import (
+    PostCreateApiView,
+    UserPostListView,
+    PostDetailApiView,
+    CategoryPostsListView,
+    LoginView,
+    RegisterView,
+    LikeCreateOrDeleteView
+)
+
 
 app_name = 'core'
 
@@ -22,4 +32,8 @@ urlpatterns = [
 
     # /register
     re_path(r'^register/', RegisterView.as_view(), name='register'),
+
+    # /like/post/{slug}
+    re_path(r'^like/post/(?P<slug>[\w-]+)/$', LikeCreateOrDeleteView.as_view(), name='like-create'),
+
 ]

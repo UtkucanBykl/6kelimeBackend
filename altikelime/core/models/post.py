@@ -27,6 +27,10 @@ class Post(BaseModel):
         self.slug = slugify(f'{self.content}-{random.randint(0, 1000)}')
         return super(Post, self).save(**kwargs)
 
+    @property
+    def like_count(self):
+        return Like.objects.filter(post_id=self.id).count()
+
 
 class Like(BaseModel):
 

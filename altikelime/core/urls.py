@@ -7,7 +7,8 @@ from .views import (
     CategoryPostsListView,
     LoginView,
     RegisterView,
-    LikeCreateOrDeleteView
+    LikeCreateOrDeleteView,
+    MostLikeListView
 )
 
 
@@ -35,5 +36,8 @@ urlpatterns = [
 
     # /like/post/{slug}
     re_path(r'^like/post/(?P<slug>[\w-]+)/$', LikeCreateOrDeleteView.as_view(), name='like-create'),
+
+    # /like/post/{slug}
+    re_path(r'^most/like/post/$', MostLikeListView.as_view(), name='most-like'),
 
 ]

@@ -3,7 +3,7 @@ from django.urls import reverse_lazy
 from rest_framework.authtoken.models import Token
 from rest_framework.test import APITestCase, APIClient
 
-from ..models import Category, Post
+from ..models import Category, Post, Like
 from ..serializers import PostListSerializer
 
 
@@ -72,3 +72,17 @@ class PostTestCase(APITestCase):
         self.assertEquals(response.status_code, 201)
         client.post(url)
         self.assertEquals(Post.objects.get(id=post.id).like_count, 0)
+
+    def test_get_post_order_by_likes(self):
+        client = APIClient()
+        post = Post.objects.create(user=self.user, content="1 2 3 4 5 6", category=self.category)
+        post3 = Post.objects.create(user=self.user, content="1 2 3 4 5 8", category=self.category)
+        post2 = Post.objects.create(user=self.user, content="1 2 3 4 5 7", category=self.category)
+        Like.objects.create(post=post, user=self.user)
+        Like.objects.create(post=post3, user=self.user)
+        url = reverse_lazy('core:most-like')
+        response = client.get(url)
+        data = sorted(Post.objects.filter(publish=True), key=lambda x: x.like_count)[::-1]
+        print(data)
+        serializer = PostListSerializer(data, many=True)
+        self.assertEquals(response.data, serializer.data)

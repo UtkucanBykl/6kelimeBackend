@@ -83,6 +83,5 @@ class PostTestCase(APITestCase):
         url = reverse_lazy('core:most-like')
         response = client.get(url)
         data = sorted(Post.objects.filter(publish=True), key=lambda x: x.like_count)[::-1]
-        print(data)
         serializer = PostListSerializer(data, many=True)
         self.assertEquals(response.data, serializer.data)

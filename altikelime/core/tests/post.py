@@ -95,3 +95,17 @@ class PostTestCase(APITestCase):
         response = client.delete(url)
         self.assertEquals(response.data, {'status': 'success'})
         self.assertEquals(Post.objects.filter(user=self.user).count(), 0)
+
+    def test_delete_post_with_incorrect(self):
+        user = User.objects.create(username='utq', email='1234@dd.com')
+        user.set_password('123456')
+        user.save()
+        client = APIClient()
+        post = Post.objects.create(user=user, content="1 2 3 4 5 6", category=self.category)
+        Post.objects.create(user=self.user, content="1 2 3 4 5 6", category=self.category)
+        url = reverse_lazy('core:post-delete', kwargs={'slug': post.slug})
+        token = Token.objects.get(user=self.user)
+        client.credentials(HTTP_AUTHORIZATION='Token ' + token.key)
+        response = client.delete(url)
+        print(response.data)
+        self.assertNotEqual(response.data, {'status': 'success'})

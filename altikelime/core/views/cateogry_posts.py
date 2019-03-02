@@ -10,7 +10,7 @@ __all__ = ['CategoryPostsListView']
 
 class CategoryPostsListView(ListAPIView):
     serializer_class = PostListSerializer
-    queryset = Post.objects.filter(publish=True)
+    queryset = Post.objects.actives().filter(publish=True)
 
     def get_queryset(self):
         qs = super(CategoryPostsListView, self).get_queryset()

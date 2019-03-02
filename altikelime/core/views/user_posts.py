@@ -13,7 +13,7 @@ class UserPostListView(ListAPIView):
     serializer_class = PostListSerializer
     authentication_classes = (TokenAuthentication, )
     permission_classes = (IsAuthenticated, )
-    queryset = Post.objects.all().select_related('category')
+    queryset = Post.objects.actives().select_related('category')
 
     def get_queryset(self):
         qs = super(UserPostListView, self).get_queryset()

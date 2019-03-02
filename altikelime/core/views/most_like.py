@@ -8,7 +8,7 @@ __all__ = ['MostLikeListView']
 
 class MostLikeListView(ListAPIView):
     serializer_class = PostListSerializer
-    queryset = Post.objects.filter(publish=True)
+    queryset = Post.objects.actives().filter(publish=True)
 
     def get_queryset(self):
         qs = super(MostLikeListView, self).get_queryset()

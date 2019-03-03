@@ -43,7 +43,6 @@ class AuthTestCase(APITestCase):
         response = client.post(url, data, format='json')
         self.assertRaisesMessage(response.data, 'Kullanıcı Adı ve Parola içermelidir.')
 
-
     def test_register(self):
 
         client = APIClient()

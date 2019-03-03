@@ -1,4 +1,3 @@
-
 from django.db import models
 from django.utils.text import slugify
 
@@ -13,7 +12,7 @@ class Post(BaseModel):
     content = models.CharField('İçerik', max_length=140)
     publish = models.BooleanField('Görünür mü?', default=True)
     category = models.ForeignKey(verbose_name='Kategori', to='Category', related_name='posts', on_delete=models.CASCADE)
-    slug = models.SlugField(editable=False, unique=True)
+    slug = models.SlugField(editable=False)
 
     class Meta:
         verbose_name = 'Gönderi'
@@ -23,7 +22,7 @@ class Post(BaseModel):
         return self.content
 
     def save(self, **kwargs):
-        self.slug = slugify(f'{self.content}-{self.id}')
+        self.slug = slugify(f'{self.content}-{self.user_id}')
         return super(Post, self).save(**kwargs)
 
     @property

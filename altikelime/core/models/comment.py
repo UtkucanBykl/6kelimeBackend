@@ -9,7 +9,7 @@ class Comment(BaseModel):
 
     user = models.ForeignKey(verbose_name='Kullanıcı', to='auth.User', related_name='comments', on_delete=models.CASCADE)
     post = models.ForeignKey(verbose_name='Gönderiler', to='Post', related_name='comments', on_delete=models.CASCADE)
-    comment = models.TextField(verbose_name="Yorum", max_length=200)
+    comment = models.TextField(verbose_name="Yorum", max_length=200, blank=False)
     publish = models.BooleanField(verbose_name="Gözükür mü?", default=True)
 
     class Meta:

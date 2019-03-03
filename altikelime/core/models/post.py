@@ -1,4 +1,3 @@
-import random
 
 from django.db import models
 from django.utils.text import slugify
@@ -24,7 +23,7 @@ class Post(BaseModel):
         return self.content
 
     def save(self, **kwargs):
-        self.slug = slugify(f'{self.content}-{random.randint(0, 1000)}')
+        self.slug = slugify(f'{self.content}-{self.id}')
         return super(Post, self).save(**kwargs)
 
     @property

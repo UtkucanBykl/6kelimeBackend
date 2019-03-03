@@ -47,7 +47,7 @@ class CommentTestCase(APITestCase):
         post = Post.objects.create(user=self.user, content='utku is here my is not', category=self.category)
         url = reverse_lazy('core:comment-create', kwargs={'slug': post.slug})
         data = {
-            'comment': '',
+            'comment': 'hello',
         }
         response = client.post(url, data, format='json')
         print(response)
@@ -59,7 +59,7 @@ class CommentTestCase(APITestCase):
         client.credentials(HTTP_AUTHORIZATION='Token ' + token.key)
         url = reverse_lazy('core:comment-create', kwargs={'slug': 'deneme'})
         data = {
-            'comment': '',
+            'comment': 'hello',
         }
         response = client.post(url, data, format='json')
         print(response)

@@ -118,3 +118,14 @@ class PostTestCase(APITestCase):
         response = client.delete(url)
         serializer = PostListSerializer(post, many=False)
         self.assertNotEqual(response.data, serializer.data)
+
+    def test_get_user_unpublish_post(self):
+        client = APIClient()
+        Post.objects.create(user=self.user, content="1 2 3 4 5 6", category=self.category, publish=False)
+        Post.objects.create(user=self.user, content="1 2 3 4 5 7", category=self.category, publish=True)
+        url = reverse_lazy('core:post-list-unpublish')
+        token = Token.objects.get(user=self.user)
+        client.credentials(HTTP_AUTHORIZATION='Token ' + token.key)
+        response = client.get(url)
+        serializer = PostListSerializer(Post.objects.filter(publish=False, user=self.user), many=True)
+        self.assertEquals(response.data, serializer.data)

@@ -10,6 +10,7 @@ from .views import (
     LikeCreateOrDeleteView,
     MostLikeListView,
     PostDeleteApiView,
+    PostUnpublishListAPIView,
 )
 
 
@@ -43,4 +44,7 @@ urlpatterns = [
 
     # /delete/post/{slug}
     re_path(r'^delete/post/(?P<slug>[\w-]+)/$', PostDeleteApiView.as_view(), name='post-delete'),
+
+    # /unpublish/post/
+    re_path(r'^unpublish/$', PostUnpublishListAPIView.as_view(), name='post-list-unpublish'),
 ]

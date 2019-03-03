@@ -29,7 +29,6 @@ class PostTestCase(APITestCase):
             'category': category.id
         }
         response = client.post(url, post_data, format='json')
-        print(response.data)
         self.assertEquals(response.data['status'], 'success')
 
     def test_get_user_posts(self):
@@ -57,8 +56,6 @@ class PostTestCase(APITestCase):
         url = reverse_lazy('core:post-category', kwargs={'cat_name': self.category.name})
         response = client.get(url)
         serializer = PostListSerializer(Post.objects.filter(category=self.category), many=True)
-        print(response.data)
-        print(serializer.data)
         self.assertEquals(response.data, serializer.data)
 
     def test_create_like(self):
@@ -107,5 +104,4 @@ class PostTestCase(APITestCase):
         token = Token.objects.get(user=self.user)
         client.credentials(HTTP_AUTHORIZATION='Token ' + token.key)
         response = client.delete(url)
-        print(response.data)
         self.assertNotEqual(response.data, {'status': 'success'})

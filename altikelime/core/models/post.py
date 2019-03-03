@@ -1,3 +1,4 @@
+import uuid
 
 from django.db import models
 from django.utils.text import slugify
@@ -23,7 +24,7 @@ class Post(BaseModel):
         return self.content
 
     def save(self, **kwargs):
-        self.slug = slugify(f'{self.content}-{self.id}')
+        self.slug = slugify(f'{uuid.uuid4()}')
         return super(Post, self).save(**kwargs)
 
     @property

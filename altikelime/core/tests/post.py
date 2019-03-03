@@ -29,7 +29,6 @@ class PostTestCase(APITestCase):
             'category': category.id
         }
         response = client.post(url, post_data, format='json')
-        print(response.data)
         self.assertEquals(response.data['status'], 'success')
 
     def test_get_user_posts(self):
@@ -57,8 +56,6 @@ class PostTestCase(APITestCase):
         url = reverse_lazy('core:post-category', kwargs={'cat_name': self.category.name})
         response = client.get(url)
         serializer = PostListSerializer(Post.objects.filter(category=self.category), many=True)
-        print(response.data)
-        print(serializer.data)
         self.assertEquals(response.data, serializer.data)
 
     def test_create_like(self):
@@ -107,5 +104,17 @@ class PostTestCase(APITestCase):
         token = Token.objects.get(user=self.user)
         client.credentials(HTTP_AUTHORIZATION='Token ' + token.key)
         response = client.delete(url)
-        print(response.data)
         self.assertNotEqual(response.data, {'status': 'success'})
+
+    def test_retrive_close_post_witH_incorrect_user(self):
+        user = User.objects.create(username='utq', email='1234@dd.com')
+        user.set_password('123456')
+        user.save()
+        client = APIClient()
+        post = Post.objects.create(user=user, content="1 2 3 4 5 6", category=self.category)
+        url = reverse_lazy('core:post-detail', kwargs={'slug': post.slug})
+        token = Token.objects.get(user=self.user)
+        client.credentials(HTTP_AUTHORIZATION='Token ' + token.key)
+        response = client.delete(url)
+        serializer = PostListSerializer(post, many=False)
+        self.assertNotEqual(response.data, serializer.data)

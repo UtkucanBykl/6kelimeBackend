@@ -7,3 +7,4 @@ from .like_create import *
 from .most_like import *
 from .post_delete import *
 from .comment_create import *
+from .post_comment_list import *

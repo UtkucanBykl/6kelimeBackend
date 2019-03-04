@@ -11,6 +11,7 @@ from .views import (
     MostLikeListView,
     PostDeleteApiView,
     CommentCreateApiView,
+    PostCommentListApiView,
 
 )
 
@@ -48,5 +49,8 @@ urlpatterns = [
 
     # /comment/create/{slug}
     re_path(r'^create-comment/(?P<slug>[\w-]+)/$', CommentCreateApiView.as_view(), name='comment-create'),
+
+    # /comment/list/{slug}
+    re_path(r'^create-list/(?P<slug>[\w-]+)/$', PostCommentListApiView.as_view(), name='comment-list')
 
 ]

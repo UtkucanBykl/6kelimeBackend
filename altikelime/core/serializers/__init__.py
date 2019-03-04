@@ -3,3 +3,4 @@ from .userdetailserializer import *
 from .postlistserializer import *
 from .authserializer import *
 from .commentcreateserializers import *
+from .commentlistserializer import *

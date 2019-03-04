@@ -10,6 +10,7 @@ from .views import (
     LikeCreateOrDeleteView,
     MostLikeListView,
     PostDeleteApiView,
+    PostUnpublishListAPIView,
     CommentCreateApiView,
     PostCommentListApiView,
 
@@ -46,6 +47,9 @@ urlpatterns = [
 
     # /delete/post/{slug}
     re_path(r'^delete/post/(?P<slug>[\w-]+)/$', PostDeleteApiView.as_view(), name='post-delete'),
+
+    # /unpublish/post/
+    re_path(r'^unpublish/$', PostUnpublishListAPIView.as_view(), name='post-list-unpublish'),
 
     # /comment/create/{slug}
     re_path(r'^create-comment/(?P<slug>[\w-]+)/$', CommentCreateApiView.as_view(), name='comment-create'),

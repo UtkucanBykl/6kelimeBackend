@@ -4,7 +4,7 @@ from rest_framework.authtoken.models import Token
 from rest_framework.test import APITestCase, APIClient
 
 from ..models import Category, Post, Like
-from ..serializers import PostListSerializer
+from ..serializers import PostListSerializer, LikeListSerializer
 
 
 __all__ = ['PostTestCase']
@@ -129,3 +129,22 @@ class PostTestCase(APITestCase):
         response = client.get(url)
         serializer = PostListSerializer(Post.objects.filter(publish=False, user=self.user), many=True)
         self.assertEquals(response.data, serializer.data)
+
+    def test_get_post_like(self):
+        client = APIClient()
+        post = Post.objects.create(user=self.user, content="1 2 3 4 5 6", category=self.category)
+        Like.objects.create(post=post, user=self.user)
+        url = reverse_lazy('core:like-list', kwargs={'slug': post.slug})
+        response = client.get(url)
+        serializer = LikeListSerializer(Like.objects.filter(user=self.user, post=post), many=True)
+        print(serializer.data)
+        print(response.data)
+        self.assertEquals(response.data, serializer.data)
+
+    def test_get_post_like_with_raise(self):
+        client = APIClient()
+        post = Post.objects.create(user=self.user, content="1 2 3 4 5 6", category=self.category)
+        Like.objects.create(post=post, user=self.user)
+        url = reverse_lazy('core:like-list', kwargs={'slug': '1231231231231231231'})
+        response = client.get(url)
+        self.assertEquals(response.status_code, 404)

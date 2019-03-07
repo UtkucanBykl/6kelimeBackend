@@ -64,3 +64,11 @@ class CommentTestCase(APITestCase):
         response = client.post(url, data, format='json')
         print(response)
         self.assertEqual(response.status_code, status.HTTP_400_BAD_REQUEST)
+
+    def test_comment_list(self):
+        client = APIClient()
+        post = Post.objects.create(user=self.user, content='utku is here my is not', category=self.category)
+        url = reverse_lazy('core:comment-list', kwargs={'slug': post.slug})
+        response = client.get(url)
+        print(response)
+        self.assertEquals(response.status_code, status.HTTP_200_OK)

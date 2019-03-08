@@ -1,5 +1,4 @@
 from django.contrib.auth.models import User
-from django.http import Http404
 from rest_framework import status
 from rest_framework.authentication import TokenAuthentication
 from rest_framework.generics import CreateAPIView
@@ -19,7 +18,7 @@ class FollowCreateAPIView(CreateAPIView):
     def create(self, request, *args, **kwargs):
         try:
             following = User.objects.get(username=request.data['following'])
-        except:
+        except User.DoesNotExist:
             return Response({'status': 'Böyle Bir kullanıcı Yok'}, status=status.HTTP_404_NOT_FOUND)
         follower = self.request.user
         qs = self.get_queryset()

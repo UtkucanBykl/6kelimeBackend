@@ -2,6 +2,8 @@ from django.test import TestCase
 
 from ..models import Category
 
+__all__ = ['QueryTestCase']
+
 
 class QueryTestCase(TestCase):
 

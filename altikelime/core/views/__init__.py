@@ -10,4 +10,5 @@ from .post_list_unpublish import *
 from .comment_create import *
 from .like_list import *
 from .post_comment_list import *
+from .post_search import *
 from .follow_create import *

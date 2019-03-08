@@ -23,7 +23,7 @@ class LikeCreateOrDeleteView(CreateAPIView):
         qs = self.get_queryset()
         if qs.filter(user=user, post=post).exists():
             qs.filter(user=user, post=post).delete()
-            return Response({'status': 'created'}, status=status.HTTP_201_CREATED)
+            return Response({'status': 'deleted'}, status=status.HTTP_201_CREATED)
         else:
             Like.objects.create(user=user, post=post)
-            return Response({'status': 'deleted'}, status=status.HTTP_201_CREATED)
+            return Response({'status': 'created'}, status=status.HTTP_201_CREATED)

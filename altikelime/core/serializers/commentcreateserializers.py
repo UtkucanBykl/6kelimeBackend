@@ -5,7 +5,6 @@ __all__ = ["CommentCreateSerializer"]
 
 
 class CommentCreateSerializer(serializers.ModelSerializer):
-    print(serializers)
 
     class Meta:
         model = Comment

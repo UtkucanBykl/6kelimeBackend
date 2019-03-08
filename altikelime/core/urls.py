@@ -14,6 +14,8 @@ from .views import (
     CommentCreateApiView,
     LikeListAPIView,
     PostCommentListApiView,
+    PostSearchListAPIView,
+    FollowCreateAPIView,
 )
 
 
@@ -56,7 +58,13 @@ urlpatterns = [
 
     # /{slug}/likes/
     re_path(r'^(?P<slug>[\w-]+)/likes/$', LikeListAPIView.as_view(), name='like-list'),
-  
+
     # /comment/list/{slug}
-    re_path(r'^create-list/(?P<slug>[\w-]+)/$', PostCommentListApiView.as_view(), name='comment-list')
+    re_path(r'^create-list/(?P<slug>[\w-]+)/$', PostCommentListApiView.as_view(), name='comment-list'),
+
+    # /search/post/?content={content}&username={username}/
+    re_path(r'^search/post/$', PostSearchListAPIView.as_view(), name='post-search'),
+
+  # /follow/{username}/
+    re_path(r'^follow/$', FollowCreateAPIView.as_view(), name='follow-create')
 ]

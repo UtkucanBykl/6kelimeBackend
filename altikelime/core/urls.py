@@ -13,6 +13,11 @@ from .views import (
     PostUnpublishListAPIView,
     CommentCreateApiView,
     LikeListAPIView,
+<<<<<<< Updated upstream
+=======
+    PostCommentListApiView,
+    PostSearchListAPIView,
+>>>>>>> Stashed changes
 )
 
 
@@ -55,4 +60,13 @@ urlpatterns = [
 
     # /{slug}/likes/
     re_path(r'^(?P<slug>[\w-]+)/likes/$', LikeListAPIView.as_view(), name='like-list'),
+<<<<<<< Updated upstream
+=======
+  
+    # /comment/list/{slug}
+    re_path(r'^create-list/(?P<slug>[\w-]+)/$', PostCommentListApiView.as_view(), name='comment-list'),
+
+    # /search/post/?content={content}&username={username}/
+    re_path(r'^search/post/$', PostSearchListAPIView.as_view(), name='post-search'),
+>>>>>>> Stashed changes
 ]

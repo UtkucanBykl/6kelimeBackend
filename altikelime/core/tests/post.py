@@ -148,3 +148,21 @@ class PostTestCase(APITestCase):
         url = reverse_lazy('core:like-list', kwargs={'slug': '1231231231231231231'})
         response = client.get(url)
         self.assertEquals(response.status_code, 404)
+
+    def test_search_post_with_content_query(self):
+        client = APIClient()
+        post = Post.objects.create(user=self.user, content="1 2 3 4 5 6", category=self.category)
+        base_url = reverse_lazy('core:post-search')
+        search_url = f'{base_url}?content=1%202%203'
+        response = client.get(search_url)
+        serializer = PostListSerializer(Post.objects.actives().filter(content__icontains='1 2 3'), many=True)
+        self.assertEqual(response.data, serializer.data)
+
+    def test_search_post_with_content_and_username(self):
+        client = APIClient()
+        post = Post.objects.create(user=self.user, content="1 2 3 4 5 6", category=self.category)
+        base_url = reverse_lazy('core:post-search')
+        search_url = f'{base_url}?content=1%202%203&username=utkucan'
+        response = client.get(search_url)
+        serializer = PostListSerializer(Post.objects.actives().filter(content__icontains='1 2 3'), many=True)
+        self.assertEqual(response.data, serializer.data)

@@ -1,9 +1,11 @@
 from rest_framework import status
 from rest_framework.test import APITestCase, APIClient
 from django.contrib.auth.models import User
-from ..models import Post, Category
 from rest_framework.authtoken.models import Token
 from django.urls import reverse_lazy
+
+from ..models import Post, Category
+
 
 __all__ = ['CommentTestCase']
 
@@ -26,7 +28,6 @@ class CommentTestCase(APITestCase):
             'comment': 'hello',
         }
         response = client.post(url, data, format='json')
-        print(response)
         self.assertEqual(response.status_code, status.HTTP_201_CREATED)
 
     def test_comment_create_with_empty_data(self):
@@ -39,7 +40,6 @@ class CommentTestCase(APITestCase):
             'comment': '',
         }
         response = client.post(url, data, format='json')
-        print(response)
         self.assertEqual(response.status_code, status.HTTP_400_BAD_REQUEST)
 
     def test_comment_create_with_not_auth(self):
@@ -50,7 +50,6 @@ class CommentTestCase(APITestCase):
             'comment': 'hello',
         }
         response = client.post(url, data, format='json')
-        print(response)
         self.assertEqual(response.status_code, status.HTTP_401_UNAUTHORIZED)
 
     def test_comment_create_with_not_create_post(self):
@@ -62,7 +61,6 @@ class CommentTestCase(APITestCase):
             'comment': 'hello',
         }
         response = client.post(url, data, format='json')
-        print(response)
         self.assertEqual(response.status_code, status.HTTP_400_BAD_REQUEST)
 
     def test_comment_list(self):
@@ -70,5 +68,4 @@ class CommentTestCase(APITestCase):
         post = Post.objects.create(user=self.user, content='utku is here my is not', category=self.category)
         url = reverse_lazy('core:comment-list', kwargs={'slug': post.slug})
         response = client.get(url)
-        print(response)
         self.assertEquals(response.status_code, status.HTTP_200_OK)

@@ -20,7 +20,6 @@ class PostDeleteApiView(DestroyAPIView):
     def get_queryset(self):
         qs = super(PostDeleteApiView, self).get_queryset()
         qs = qs.filter(user=self.request.user)
-        print(qs[0].user == self.request.user)
         return qs
 
     def destroy(self, request, *args, **kwargs):

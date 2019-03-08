@@ -15,6 +15,7 @@ from .views import (
     LikeListAPIView,
     PostCommentListApiView,
     PostSearchListAPIView,
+    FollowCreateAPIView,
 )
 
 
@@ -63,4 +64,7 @@ urlpatterns = [
 
     # /search/post/?content={content}&username={username}/
     re_path(r'^search/post/$', PostSearchListAPIView.as_view(), name='post-search'),
+
+  # /follow/{username}/
+    re_path(r'^follow/$', FollowCreateAPIView.as_view(), name='follow-create')
 ]

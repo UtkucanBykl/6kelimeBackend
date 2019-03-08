@@ -137,8 +137,6 @@ class PostTestCase(APITestCase):
         url = reverse_lazy('core:like-list', kwargs={'slug': post.slug})
         response = client.get(url)
         serializer = LikeListSerializer(Like.objects.filter(user=self.user, post=post), many=True)
-        print(serializer.data)
-        print(response.data)
         self.assertEquals(response.data, serializer.data)
 
     def test_get_post_like_with_raise(self):

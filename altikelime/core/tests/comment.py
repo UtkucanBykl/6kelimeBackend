@@ -69,3 +69,12 @@ class CommentTestCase(APITestCase):
         url = reverse_lazy('core:comment-list', kwargs={'slug': post.slug})
         response = client.get(url)
         self.assertEquals(response.status_code, status.HTTP_200_OK)
+
+    def test_comment_delete(self):
+        client = APIClient()
+        post = Post.objects.create(user=self.user, content='utku is here my is not', category=self.category)
+        token = Token.objects.get(user=self.user)
+        client.credentials(HTTP_AUTHORIZATION='Token ' + token.key)
+        url = reverse_lazy('core:comment-delete', kwargs={'slug':post.slug})
+        response = client.delete(url)
+        self.assertEqual(response.status_code, status.HTTP_204_NO_CONTENT)

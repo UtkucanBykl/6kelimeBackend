@@ -15,7 +15,6 @@ class PostCommentListApiView(ListAPIView):
     queryset = Comment.objects.actives()
 
     def get_queryset(self):
-        user = self.request.user
         slug = self.kwargs['slug']
         try:
             self.post = Post.objects.get(slug=slug)

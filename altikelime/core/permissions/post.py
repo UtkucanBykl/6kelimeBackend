@@ -17,3 +17,6 @@ class IsOwnerOrOpen(permissions.BasePermission):
         elif obj.user == request.user:
             return True
         return False
+
+class IsPostOrCommentOwner(permissions.BasePermission):
+    pass

@@ -18,4 +18,4 @@ class LikeListAPIView(ListAPIView):
             post = qs.get(slug=self.kwargs['slug'])
             return post.likes.actives()
         except Post.DoesNotExist as e:
-            raise Http404("Post does not exist")
+            raise Http404("Post does not exist " + str(e))

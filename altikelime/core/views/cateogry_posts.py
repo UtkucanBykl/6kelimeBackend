@@ -2,7 +2,7 @@ from rest_framework.generics import ListAPIView
 
 
 from ..serializers import PostListSerializer
-from ..models import Post, Category
+from ..models import Post
 
 
 __all__ = ['CategoryPostsListView']

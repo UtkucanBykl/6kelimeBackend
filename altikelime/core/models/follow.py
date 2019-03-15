@@ -9,13 +9,13 @@ class Follow(BaseModel):
     follower = models.ForeignKey(
         verbose_name='Takip Eden',
         to='auth.User',
-        related_name='following',
+        related_name='followings',
         on_delete=models.CASCADE
     )
     following = models.ForeignKey(
         verbose_name='Takip Edilen',
         to='auth.User',
-        related_name='follower',
+        related_name='followers',
         on_delete=models.CASCADE
     )
 

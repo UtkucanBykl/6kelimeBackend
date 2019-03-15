@@ -3,3 +3,4 @@ from .post import *
 from .category import *
 from .follow import *
 from .comment import *
+from .notification import *

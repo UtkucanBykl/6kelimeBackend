@@ -2,17 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a4167276-2d60-4c59-9340-0d577375ed07" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/core/models/notification.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/core/signals/notification.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/core/tests/notification.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/config/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/core/admin.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/models/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/core/models/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/models/follow.py" beforeDir="false" afterPath="$PROJECT_DIR$/core/models/follow.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/signals/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/core/signals/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/tests/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/core/tests/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/core/urls.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/core/serializers/postdetailserializer.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/serializers/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/core/serializers/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/serializers/likelistserializer.py" beforeDir="false" afterPath="$PROJECT_DIR$/core/serializers/likelistserializer.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/tests/post.py" beforeDir="false" afterPath="$PROJECT_DIR$/core/tests/post.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/views/post_detail.py" beforeDir="false" afterPath="$PROJECT_DIR$/core/views/post_detail.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -24,64 +19,17 @@
     <SUITE FILE_PATH="coverage/altikelime$Unittests_for_core_tests_notification_NotificationTestCase.coverage" NAME="Unittests for core.tests.notification.NotificationTestCase Coverage Results" MODIFIED="1552666522774" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/altikelime$Test__core_tests_post_PostTestCase_test_get_post_like.coverage" NAME="Test: core.tests.post.PostTestCase.test_get_post_like Coverage Results" MODIFIED="1552667133657" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
     <SUITE FILE_PATH="coverage/altikelime$Test__core_tests_comment_CommentTestCase_test_comment_create.coverage" NAME="Test: core.tests.comment.CommentTestCase.test_comment_create Coverage Results" MODIFIED="1552667405187" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
-    <SUITE FILE_PATH="coverage/altikelime$Unittests_for_core_tests_notification_NotificationTestCase_test_like_signals.coverage" NAME="Unittests for core.tests.notification.NotificationTestCase.test_like_signals Coverage Results" MODIFIED="1552667155726" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/altikelime$Unittests_for_core_tests_notification_NotificationTestCase_test_like_signals.coverage" NAME="Unittests for core.tests.notification.NotificationTestCase.test_like_signals Coverage Results" MODIFIED="1552667713909" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/altikelime$Test__core_tests_follow_FollowTestCase_test_follow_create.coverage" NAME="Test: core.tests.follow.FollowTestCase.test_follow_create Coverage Results" MODIFIED="1552667149432" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/altikelime$Test__core_tests_query_QueryTestCase_test_get_post_activies.coverage" NAME="Test: core.tests.query.QueryTestCase.test_get_post_activies Coverage Results" MODIFIED="1552667606317" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
   </component>
   <component name="FileEditorManager">
     <leaf>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/core/models/notification.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="210">
-              <caret line="14" column="12" selection-start-line="14" selection-start-column="12" selection-end-line="14" selection-end-column="12" />
-              <folding>
-                <element signature="e#0#28#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/core/signals/notification.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="278">
-              <caret line="76" column="33" selection-start-line="76" selection-start-column="33" selection-end-line="76" selection-end-column="33" />
-              <folding>
-                <element signature="e#0#46#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/core/tests/post.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1650">
-              <caret line="18" column="31" lean-forward="true" selection-start-line="18" selection-end-line="19" />
-              <folding>
-                <element signature="e#0#43#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/core/tests/follow.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="120">
-              <caret line="8" column="32" selection-start-line="8" selection-start-column="21" selection-end-line="8" selection-end-column="32" />
-              <folding>
-                <element signature="e#0#43#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/core/tests/notification.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="135">
-              <caret line="10" column="32" lean-forward="true" selection-start-line="10" selection-start-column="32" selection-end-line="10" selection-end-column="32" />
+            <state relative-caret-position="345">
+              <caret line="38" column="87" selection-start-line="38" selection-start-column="87" selection-end-line="38" selection-end-column="87" />
               <folding>
                 <element signature="e#0#29#0" expanded="true" />
               </folding>
@@ -89,12 +37,83 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/core/tests/comment.py">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/core/views/like_list.py">
           <provider selected="true" editor-type-id="text-editor">
             <state>
               <folding>
-                <element signature="e#0#33#0" expanded="true" />
+                <element signature="e#0#31#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/core/signals/post.py">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/core/views/post_detail.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="240">
+              <caret line="16" column="33" lean-forward="true" selection-start-line="16" selection-start-column="33" selection-end-line="16" selection-end-column="33" />
+              <folding>
+                <element signature="e#1#52#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/core/tests/post.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="15">
+              <caret line="48" column="58" lean-forward="true" selection-start-line="48" selection-start-column="58" selection-end-line="48" selection-end-column="58" />
+              <folding>
+                <element signature="e#0#43#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/core/serializers/postlistserializer.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="30">
+              <caret line="2" column="46" selection-start-line="2" selection-start-column="46" selection-end-line="2" selection-end-column="46" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/core/serializers/postdetailserializer.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="135">
+              <caret line="9" column="44" selection-start-line="9" selection-start-column="44" selection-end-line="9" selection-end-column="44" />
+              <folding>
+                <element signature="e#0#38#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/core/serializers/__init__.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="75">
+              <caret line="5" column="24" selection-start-line="5" selection-start-column="6" selection-end-line="5" selection-end-column="24" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/core/serializers/likelistserializer.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="210">
+              <caret line="14" column="26" lean-forward="true" selection-start-line="14" selection-start-column="26" selection-end-line="14" selection-end-column="26" />
+              <folding>
+                <element signature="e#0#38#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -105,27 +124,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="75">
               <caret line="5" column="27" selection-start-line="5" selection-start-column="27" selection-end-line="5" selection-end-column="27" />
-              <folding>
-                <element signature="e#0#19#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/core/tests/auth.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret column="11" lean-forward="true" selection-start-column="11" selection-end-column="11" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/core/signals/__init__.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="45">
-              <caret line="3" selection-start-line="3" selection-end-line="3" />
               <folding>
                 <element signature="e#0#19#0" expanded="true" />
               </folding>
@@ -145,6 +143,7 @@
   <component name="FindInProjectRecents">
     <findStrings>
       <find>sender</find>
+      <find>detail</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -157,9 +156,15 @@
         <option value="$PROJECT_DIR$/core/models/notification.py" />
         <option value="$PROJECT_DIR$/core/signals/__init__.py" />
         <option value="$PROJECT_DIR$/core/tests/__init__.py" />
-        <option value="$PROJECT_DIR$/core/tests/notification.py" />
         <option value="$PROJECT_DIR$/core/models/follow.py" />
         <option value="$PROJECT_DIR$/core/signals/notification.py" />
+        <option value="$PROJECT_DIR$/core/tests/notification.py" />
+        <option value="$PROJECT_DIR$/core/serializers/likelistserializer.py" />
+        <option value="$PROJECT_DIR$/core/serializers/__init__.py" />
+        <option value="$PROJECT_DIR$/core/serializers/postlistserializer.py" />
+        <option value="$PROJECT_DIR$/core/serializers/postdetailserializer.py" />
+        <option value="$PROJECT_DIR$/core/views/post_detail.py" />
+        <option value="$PROJECT_DIR$/core/tests/post.py" />
       </list>
     </option>
   </component>
@@ -190,13 +195,7 @@
               <item name="altikelime" type="b2602c69:ProjectViewProjectNode" />
               <item name="altikelime" type="462c0819:PsiDirectoryNode" />
               <item name="core" type="462c0819:PsiDirectoryNode" />
-              <item name="models" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="altikelime" type="b2602c69:ProjectViewProjectNode" />
-              <item name="altikelime" type="462c0819:PsiDirectoryNode" />
-              <item name="core" type="462c0819:PsiDirectoryNode" />
-              <item name="signals" type="462c0819:PsiDirectoryNode" />
+              <item name="serializers" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="altikelime" type="b2602c69:ProjectViewProjectNode" />
@@ -227,7 +226,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Django tests.Test: core.tests.comment.CommentTestCase.test_comment_create">
+  <component name="RunManager" selected="Python tests.Unittests for core.tests.notification.NotificationTestCase.test_like_signals">
     <configuration name="Test: core.tests.comment.CommentTestCase.test_comment_create" type="DjangoTestsConfigurationType" temporary="true">
       <module name="altikelime" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -288,6 +287,26 @@
       <option name="OPTIONS" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="Test: core.tests.query.QueryTestCase.test_get_post_activies" type="DjangoTestsConfigurationType" temporary="true">
+      <module name="altikelime" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="TARGET" value="core.tests.query.QueryTestCase.test_get_post_activies" />
+      <option name="SETTINGS_FILE" value="" />
+      <option name="CUSTOM_SETTINGS" value="false" />
+      <option name="USE_OPTIONS" value="false" />
+      <option name="OPTIONS" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="altikelime" type="Python.DjangoServer" factoryName="Django server">
       <module name="altikelime" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -311,21 +330,6 @@
       <option name="customRunCommand" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="Unittests for core.tests.notification.NotificationTestCase" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
-      <module name="altikelime" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;core.tests.notification.NotificationTestCase&quot;" />
-      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
-      <method v="2" />
-    </configuration>
     <configuration name="Unittests for core.tests.notification.NotificationTestCase.test_like_signals" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
       <module name="altikelime" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -343,11 +347,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Django tests.Test: core.tests.comment.CommentTestCase.test_comment_create" />
         <item itemvalue="Python tests.Unittests for core.tests.notification.NotificationTestCase.test_like_signals" />
+        <item itemvalue="Django tests.Test: core.tests.query.QueryTestCase.test_get_post_activies" />
+        <item itemvalue="Django tests.Test: core.tests.comment.CommentTestCase.test_comment_create" />
         <item itemvalue="Django tests.Test: core.tests.follow.FollowTestCase.test_follow_create" />
         <item itemvalue="Django tests.Test: core.tests.post.PostTestCase.test_get_post_like" />
-        <item itemvalue="Python tests.Unittests for core.tests.notification.NotificationTestCase" />
       </list>
     </recent_temporary>
   </component>
@@ -361,20 +365,11 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1552664757501</updated>
-      <workItem from="1552664760751" duration="2658000" />
+      <workItem from="1552664760751" duration="4176000" />
     </task>
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="Test__core_tests_follow_FollowTestCase_test_follow_create - 2019.03.15 at 19h 19m 46s.xml">
-      <configuration name="Test: core.tests.follow.FollowTestCase.test_follow_create" configurationId="DjangoTestsConfigurationType" />
-    </history-entry>
-    <history-entry file="Test__core_tests_follow_FollowTestCase_test_follow_create - 2019.03.15 at 19h 20m 15s.xml">
-      <configuration name="Test: core.tests.follow.FollowTestCase.test_follow_create" configurationId="DjangoTestsConfigurationType" />
-    </history-entry>
-    <history-entry file="Test__core_tests_follow_FollowTestCase_test_follow_create - 2019.03.15 at 19h 20m 32s.xml">
-      <configuration name="Test: core.tests.follow.FollowTestCase.test_follow_create" configurationId="DjangoTestsConfigurationType" />
-    </history-entry>
     <history-entry file="Test__core_tests_follow_FollowTestCase_test_follow_create - 2019.03.15 at 19h 21m 30s.xml">
       <configuration name="Test: core.tests.follow.FollowTestCase.test_follow_create" configurationId="DjangoTestsConfigurationType" />
     </history-entry>
@@ -396,13 +391,21 @@
     <history-entry file="Test__core_tests_comment_CommentTestCase_test_comment_create - 2019.03.15 at 19h 30m 06s.xml">
       <configuration name="Test: core.tests.comment.CommentTestCase.test_comment_create" configurationId="DjangoTestsConfigurationType" />
     </history-entry>
+    <history-entry file="Unittests_for_core_tests_notification_NotificationTestCase_test_like_signals - 2019.03.15 at 19h 33m 08s.xml">
+      <configuration name="Unittests for core.tests.notification.NotificationTestCase.test_like_signals" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Test__core_tests_query_QueryTestCase_test_get_post_activies - 2019.03.15 at 19h 33m 27s.xml">
+      <configuration name="Test: core.tests.query.QueryTestCase.test_get_post_activies" configurationId="DjangoTestsConfigurationType" />
+    </history-entry>
+    <history-entry file="Unittests_for_core_tests_notification_NotificationTestCase_test_like_signals - 2019.03.15 at 19h 35m 14s.xml">
+      <configuration name="Unittests for core.tests.notification.NotificationTestCase.test_like_signals" configurationId="tests" />
+    </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="2658000" />
+    <option name="totallyTimeSpent" value="4176000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1280" height="800" extended-state="0" />
-    <editor active="true" />
     <layout>
       <window_info id="Favorites" side_tool="true" />
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24959612" />
@@ -411,11 +414,11 @@
       <window_info anchor="bottom" id="Database Changes" />
       <window_info anchor="bottom" id="Version Control" />
       <window_info anchor="bottom" id="Python Console" />
-      <window_info anchor="bottom" id="Terminal" weight="0.32876712" />
+      <window_info active="true" anchor="bottom" id="Terminal" visible="true" weight="0.32876712" />
       <window_info anchor="bottom" id="Event Log" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32876712" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.32876712" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.32876712" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -478,20 +481,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/core/signals/post.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/core/models/post.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="173">
           <caret line="34" column="6" selection-start-line="34" selection-start-column="6" selection-end-line="34" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/tests/auth.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="11" lean-forward="true" selection-start-column="11" selection-end-column="11" />
         </state>
       </provider>
     </entry>
@@ -515,16 +508,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/core/tests/post.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1650">
-          <caret line="18" column="31" lean-forward="true" selection-start-line="18" selection-end-line="19" />
-          <folding>
-            <element signature="e#0#43#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/core/tests/follow.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
@@ -532,6 +515,31 @@
           <folding>
             <element signature="e#0#43#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/tests/comment.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-136">
+          <folding>
+            <element signature="e#0#33#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/tests/query.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="e#0#32#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/tests/auth.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-432">
+          <caret column="11" lean-forward="true" selection-start-column="11" selection-end-column="11" />
         </state>
       </provider>
     </entry>
@@ -547,19 +555,76 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/core/tests/notification.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="10" column="32" lean-forward="true" selection-start-line="10" selection-start-column="32" selection-end-line="10" selection-end-column="32" />
+        <state relative-caret-position="345">
+          <caret line="38" column="87" selection-start-line="38" selection-start-column="87" selection-end-line="38" selection-end-column="87" />
           <folding>
             <element signature="e#0#29#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/core/tests/comment.py">
+    <entry file="file://$PROJECT_DIR$/core/views/like_list.py">
       <provider selected="true" editor-type-id="text-editor">
         <state>
           <folding>
-            <element signature="e#0#33#0" expanded="true" />
+            <element signature="e#0#31#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/signals/post.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/serializers/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" column="24" selection-start-line="5" selection-start-column="6" selection-end-line="5" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/serializers/postlistserializer.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" column="46" selection-start-line="2" selection-start-column="46" selection-end-line="2" selection-end-column="46" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/views/post_detail.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="16" column="33" lean-forward="true" selection-start-line="16" selection-start-column="33" selection-end-line="16" selection-end-column="33" />
+          <folding>
+            <element signature="e#1#52#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/serializers/likelistserializer.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="14" column="26" lean-forward="true" selection-start-line="14" selection-start-column="26" selection-end-line="14" selection-end-column="26" />
+          <folding>
+            <element signature="e#0#38#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/serializers/postdetailserializer.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="9" column="44" selection-start-line="9" selection-start-column="44" selection-end-line="9" selection-end-column="44" />
+          <folding>
+            <element signature="e#0#38#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/tests/post.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="48" column="58" lean-forward="true" selection-start-line="48" selection-start-column="58" selection-end-line="48" selection-end-column="58" />
+          <folding>
+            <element signature="e#0#43#0" expanded="true" />
           </folding>
         </state>
       </provider>

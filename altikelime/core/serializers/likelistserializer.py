@@ -12,4 +12,4 @@ class LikeListSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Like
-        fields = ('user', 'update_at')
+        fields = ('user',)

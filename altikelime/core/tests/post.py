@@ -4,7 +4,7 @@ from rest_framework.authtoken.models import Token
 from rest_framework.test import APITestCase, APIClient
 
 from ..models import Category, Post, Like
-from ..serializers import PostListSerializer, LikeListSerializer
+from ..serializers import PostListSerializer, LikeListSerializer, PostDetailSerializer
 
 
 __all__ = ['PostTestCase']
@@ -45,8 +45,9 @@ class PostTestCase(APITestCase):
         client = APIClient()
         post = Post.objects.create(user=self.user, content="1 2 3 4 5 6", category=self.category)
         url = reverse_lazy('core:post-detail', kwargs={'slug': post.slug})
+        Like.objects.create(user=self.user, post=post)
         response = client.get(url)
-        serializer = PostListSerializer(post, many=False)
+        serializer = PostDetailSerializer(post, many=False)
         self.assertEquals(response.data, serializer.data)
 
     def test_get_category_posts(self):
@@ -116,7 +117,7 @@ class PostTestCase(APITestCase):
         token = Token.objects.get(user=self.user)
         client.credentials(HTTP_AUTHORIZATION='Token ' + token.key)
         response = client.delete(url)
-        serializer = PostListSerializer(post, many=False)
+        serializer = PostDetailSerializer(post, many=False)
         self.assertNotEqual(response.data, serializer.data)
 
     def test_get_user_unpublish_post(self):
@@ -149,7 +150,7 @@ class PostTestCase(APITestCase):
 
     def test_search_post_with_content_query(self):
         client = APIClient()
-        post = Post.objects.create(user=self.user, content="1 2 3 4 5 6", category=self.category)
+        Post.objects.create(user=self.user, content="1 2 3 4 5 6", category=self.category)
         base_url = reverse_lazy('core:post-search')
         search_url = f'{base_url}?content=1%202%203'
         response = client.get(search_url)

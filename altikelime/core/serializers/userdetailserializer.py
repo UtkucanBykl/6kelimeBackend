@@ -7,12 +7,8 @@ __all__ = ['UserDetailSerializer']
 
 class UserDetailSerializer(serializers.ModelSerializer):
 
-    token = serializers.SerializerMethodField()
-
     class Meta:
 
         model = User
-        fields = ('token', 'username', 'email')
+        fields = ('username', 'email')
 
-    def get_token(self, obj):
-        return Token.objects.get(user=obj).key

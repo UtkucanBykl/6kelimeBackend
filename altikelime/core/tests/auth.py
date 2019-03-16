@@ -1,4 +1,3 @@
-import json
 
 from rest_framework import status
 from rest_framework.test import APITestCase, APIClient
@@ -25,9 +24,7 @@ class AuthTestCase(APITestCase):
         url = reverse_lazy('core:login')
         data = {'username': 'hikmet', 'password': '123456'}
         response = client.post(url, data, format='json')
-        raw_data = response.content.decode('utf-8')
-        raw_data = json.loads(raw_data)
-        self.assertEqual(str(token.key), raw_data['token'])
+        self.assertEqual(str(token.key), response.data['token'])
 
     def test_login_with_incorrect_data(self):
         client = APIClient()

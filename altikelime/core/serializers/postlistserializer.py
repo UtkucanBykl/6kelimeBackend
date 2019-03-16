@@ -1,7 +1,9 @@
+
 from rest_framework import serializers
 
 from ..serializers import UserDetailSerializer
-from ..models import Post, Like
+from ..models import Post
+
 
 __all__ = ['PostListSerializer']
 
@@ -14,7 +16,7 @@ class PostListSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Post
-        fields = ('user', 'content', 'category_name', 'update_at', 'publish', 'is_like')
+        fields = ('user', 'content', 'category_name', 'update_at', 'publish', 'is_like', 'like_count', 'slug')
 
     def get_category_name(self, obj):
         return obj.category.name

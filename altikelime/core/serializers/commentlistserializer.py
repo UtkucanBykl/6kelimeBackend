@@ -1,13 +1,14 @@
 from rest_framework import serializers
 
 from ..models import Comment
+from ..serializers import UserDetailSerializer
 
 __all__ = ['PostCommentListSerializer']
 
 
 class PostCommentListSerializer(serializers.ModelSerializer):
 
-    user= serializers.JSONField()
+    user = UserDetailSerializer()
 
     class Meta:
         model = Comment

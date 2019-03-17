@@ -1,5 +1,4 @@
 from rest_framework import status
-from rest_framework.authentication import TokenAuthentication
 from rest_framework.generics import CreateAPIView
 from rest_framework.permissions import IsAuthenticated
 from rest_framework.response import Response
@@ -10,7 +9,6 @@ __all__ = ['LikeCreateOrDeleteView']
 
 
 class LikeCreateOrDeleteView(CreateAPIView):
-    authentication_classes = (TokenAuthentication, )
     permission_classes = (IsAuthenticated, )
     queryset = Like.objects.all()
 

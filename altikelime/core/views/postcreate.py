@@ -1,5 +1,4 @@
 from rest_framework import status
-from rest_framework.authentication import TokenAuthentication
 from rest_framework.generics import CreateAPIView
 from rest_framework.permissions import IsAuthenticated
 from rest_framework.response import Response
@@ -12,7 +11,6 @@ __all__ = ['PostCreateApiView']
 class PostCreateApiView(CreateAPIView):
 
     serializer_class = PostCreateSerializer
-    authentication_classes = (TokenAuthentication, )
     permission_classes = (IsAuthenticated, )
 
     def perform_create(self, serializer):

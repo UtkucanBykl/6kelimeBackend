@@ -1,4 +1,3 @@
-from rest_framework.authentication import TokenAuthentication
 from rest_framework.generics import ListAPIView
 from rest_framework.permissions import IsAuthenticated
 
@@ -11,7 +10,6 @@ __all__ = ['UserPostListView']
 class UserPostListView(ListAPIView):
 
     serializer_class = PostListSerializer
-    authentication_classes = (TokenAuthentication, )
     permission_classes = (IsAuthenticated, )
     queryset = Post.objects.actives().select_related('category')
 

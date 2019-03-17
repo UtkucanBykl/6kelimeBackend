@@ -1,5 +1,4 @@
 from rest_framework import status
-from rest_framework.authentication import TokenAuthentication
 from rest_framework.generics import DestroyAPIView
 from rest_framework.permissions import IsAuthenticated
 from rest_framework.response import Response
@@ -11,7 +10,6 @@ __all__ = ['PostDeleteApiView']
 
 
 class PostDeleteApiView(DestroyAPIView):
-    authentication_classes = (TokenAuthentication,)
     permission_classes = (IsAuthenticated, IsOwner)
     lookup_field = 'slug'
     lookup_url_kwarg = 'slug'

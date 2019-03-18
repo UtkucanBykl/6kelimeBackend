@@ -2,7 +2,7 @@
 from rest_framework import serializers
 
 from ..serializers import UserDetailSerializer
-from ..models import Post
+from ..models import Post, Like
 
 
 __all__ = ['PostListSerializer']
@@ -22,4 +22,8 @@ class PostListSerializer(serializers.ModelSerializer):
         return obj.category.name
 
     def get_is_like(self, obj):
-        return False
+        request = self.context.get('request', None)
+        print(request)
+        if not request or not request.user.is_authenticated:
+            return False
+        return Like.objects.filter(post=obj, user=self.context['request'].user).exists()

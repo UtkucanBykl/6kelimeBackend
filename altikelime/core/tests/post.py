@@ -204,4 +204,4 @@ class PostTestCase(APITestCase):
             'content': '1 2 3 4 5 5'
         }
         response = client.patch(url, data)
-        self.assertNotEqual(response.data, {'status': 'success'})        
+        self.assertNotEqual(response.data, {'status': 'success'})     

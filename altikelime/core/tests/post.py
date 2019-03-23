@@ -1,11 +1,11 @@
 from django.contrib.auth.models import User
 from django.urls import reverse_lazy
 from rest_framework.authtoken.models import Token
-from rest_framework.test import APITestCase, APIClient
+from rest_framework.test import APIClient, APITestCase
 
-from ..models import Category, Post, Like
-from ..serializers import PostListSerializer, LikeListSerializer, PostDetailSerializer
-
+from ..models import Category, Like, Post
+from ..serializers import (LikeListSerializer, PostDetailSerializer,
+                           PostListSerializer)
 
 __all__ = ['PostTestCase']
 
@@ -165,3 +165,43 @@ class PostTestCase(APITestCase):
         response = client.get(search_url)
         serializer = PostListSerializer(Post.objects.actives().filter(content__icontains='1 2 3'), many=True)
         self.assertEqual(response.data, serializer.data)
+
+    def test_patch_update(self):
+        client = APIClient()
+        token = Token.objects.get(user=self.user)
+        post = Post.objects.create(user=self.user, content="1 2 3 4 5 6", category=self.category)
+        client.credentials(HTTP_AUTHORIZATION='Token ' + token.key)
+        url = reverse_lazy('core:post-update', kwargs={'slug': post.slug})
+        data = {
+            'content': '1 2 3 4 5 5'
+        }
+        response = client.patch(url, data)
+        self.assertEqual(response.data, {'status': 'success'})
+
+    def test_put_update(self):
+        client = APIClient()
+        token = Token.objects.get(user=self.user)
+        post = Post.objects.create(user=self.user, content="1 2 3 4 5 6", category=self.category)
+        client.credentials(HTTP_AUTHORIZATION='Token ' + token.key)
+        url = reverse_lazy('core:post-update', kwargs={'slug': post.slug})
+        data = {
+            'content': '1 2 3 4 5 5',
+            'category': self.category.id
+        }
+        response = client.put(url, data)
+        self.assertEqual(response.data, {'status': 'success'})
+
+    def test_patch_with_another_user(self):
+        user = User.objects.create(username='utq', email='1234@dd.com')
+        user.set_password('123456')
+        user.save()
+        client = APIClient()
+        token = Token.objects.get(user=user)
+        post = Post.objects.create(user=self.user, content="1 2 3 4 5 6", category=self.category)
+        client.credentials(HTTP_AUTHORIZATION='Token ' + token.key)
+        url = reverse_lazy('core:post-update', kwargs={'slug': post.slug})
+        data = {
+            'content': '1 2 3 4 5 5'
+        }
+        response = client.patch(url, data)
+        self.assertNotEqual(response.data, {'status': 'success'})        

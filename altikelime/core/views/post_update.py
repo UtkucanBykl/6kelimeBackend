@@ -14,7 +14,7 @@ class PostUpdateAPIView(UpdateAPIView):
     permission_classes = (IsOwner,)
     lookup_field = 'slug'
     lookup_url_kwarg = 'slug'
-    queryset = Post.objects.actives()
+    queryset = Post.objects.actives().select_related('category')
 
     def perform_update(self, serializer):
         serializer.save(user=self.request.user)

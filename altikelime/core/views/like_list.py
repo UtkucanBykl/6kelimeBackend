@@ -1,8 +1,8 @@
 from django.http import Http404
 from rest_framework.generics import ListAPIView
 
-from ..serializers import LikeListSerializer
 from ..models import Post
+from ..serializers import LikeListSerializer
 
 __all__ = ['LikeListAPIView']
 

@@ -18,6 +18,4 @@ class MostLikeListView(ListAPIView):
             .annotate(likeeee=Count('likes'))
             .order_by('-likeeee')
         )
-        print(qs.first().likeeee)
-        print(qs.last().likeeee)
         return qs

@@ -17,7 +17,7 @@ django-debug-toolbar==1.11
 django-extensions==2.1.4
 django-filter==2.1.0
 django-rest-auth==0.9.3
-djangorestframework==3.9.1
+djangorestframework==3.11.2
 djangorestframework-stubs==0.2.0
 flake8==3.6.0
 flake8-bandit==2.0.0

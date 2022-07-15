@@ -8,7 +8,7 @@ black==18.9b0
 certifi==2018.11.29
 chardet==3.0.4
 Click==7.0
-codecov==2.0.15
+codecov==2.0.16
 coverage==4.5.2
 decorator==4.3.2
 Django==2.1.9
